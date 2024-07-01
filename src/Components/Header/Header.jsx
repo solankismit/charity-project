@@ -7,14 +7,14 @@ import DropdownMenu from './DropDown'
 const Header = () => {
   const [open, setOpen] = useState(false)
   return (
-    <>
-
-      <div style={{ background: 'linear-gradient(to right, #2b3a31, #3F452C, #665921, #8D6E17, #AD7F0F)' }} className='flex items-center justify-center h-[42px] '>
+    <header>
+      
+      <div style={{ background: 'linear-gradient(to right, #2b3a31, #3F452C, #665921, #8D6E17, #AD7F0F)' }} className='flex items-center justify-center h-[42px] fixed top-0 w-full z-50'>
         <span className="bg-black leading-7 bg-opacity-50 px-4 inline-block align-middle text-xs text-white rounded-md font-bold mr-4 leading-6 uppercase">Success stories</span>
         <div className='uppercase text-xs font-medium align-middle text-white '>Fight for right cause for save the world. </div>
         <Link href='/stories' className='uppercase text-xs font-medium align-middle text-white underline underline-offset-4 hover:opacity-50'>Read Stories</Link>
       </div>
-      <header className='w-fullfixed z-50 px-11 py-4 md:py-[30px] bg-primary-light border-b-2'>
+      <div className='w-full fixed z-50 px-11 py-4 md:py-[30px] bg-primary-light border-b-2 top-[40px]'>
         <div className='container mx-auto flex justify-between items-center h-full '>
           <div className='flex items-center'>
             <Link href='/' className='flex relative items-center'>
@@ -51,20 +51,21 @@ const Header = () => {
           </div>
         </div>
 
-      </header>
-      <div className={`md:hidden fixed inset-0 bg-white z-20 transform transition-transform duration-200 ease-in-out translate-y-20 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className='p-8'>
-          <Link href='/' className='block text-lg font-medium mb-4 text-dark-grey opacity-50'>Home</Link>
-          <Link href='/contact' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Contact Us</Link>
-          <Link href='/team' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Our Team</Link>
-          <DropdownMenu text='Our Work' links={[
-            { href: '/work1', text: 'Work 1' },
-            { href: '/work2', text: 'Work 2' },
-            { href: '/work3', text: 'Work 3' },
-          ]} />
-        </div>
       </div>
-    </>
+<div className={`md:hidden fixed inset-0 bg-white z-20 transform transition-transform duration-200 ease-in-out translate-x-0 ${open ? 'translate-y-28' : '-translate-y-full'}`}>
+  <div className='p-8'>
+    <Link href='/' className='block text-lg font-medium mb-4 text-dark-grey opacity-50'>Home</Link>
+    <Link href='/contact' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Contact Us</Link>
+    <Link href='/team' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Our Team</Link>
+    <DropdownMenu text='Our Work' links={[
+      { href: '/work1', text: 'Work 1' },
+      { href: '/work2', text: 'Work 2' },
+      { href: '/work3', text: 'Work 3' },
+    ]} />
+  </div>
+</div>
+
+    </header>
 
   )
 }
