@@ -7,63 +7,70 @@ import DropdownMenu from './DropDown'
 const Header = () => {
   const [open, setOpen] = useState(false)
   return (
-    <header>
-      
-      <div style={{ background: 'linear-gradient(to right, #2b3a31, #3F452C, #665921, #8D6E17, #AD7F0F)' }} className='flex items-center justify-center h-[42px] fixed top-0 w-full z-50'>
-        <span className="bg-black leading-7 bg-opacity-50 px-4 inline-block align-middle text-xs text-white rounded-md font-bold mr-4 leading-6 uppercase">Success stories</span>
-        <div className='uppercase text-xs font-medium align-middle text-white '>Fight for right cause for save the world. </div>
-        <Link href='/stories' className='uppercase text-xs font-medium align-middle text-white underline underline-offset-4 hover:opacity-50'>Read Stories</Link>
-      </div>
-      <div className='w-full fixed z-50 px-11 py-4 md:py-[30px] bg-primary-light border-b-2 top-[40px]'>
-        <div className='container mx-auto flex justify-between items-center h-full '>
-          <div className='flex items-center'>
-            <Link href='/' className='flex relative items-center'>
-              <img src='/logo.jpg' alt='Logo' className='w-10 h-10' />
-              <h1 className='text-xl font-bold ml-2'>Charity</h1>
-              <div className='w-0.5 h-8 bg-gray-200 absolute right-0 translate-x-5' />
-            </Link>
-            <div className='hidden md:flex items-center ml-10'>
-              <Link href='/' className='text-lg font-medium mr-8 text-dark-grey opacity-50'>Home</Link>
-              <Link href='/contact' className='text-lg font-medium text-dark-grey mr-8 hover:opacity-50'>Contact Us</Link>
-              <Link href='/team' className='text-lg font-medium text-dark-grey hover:opacity-50 mr-8'>Our Team</Link>
-              {/* <Link href='/our-work' className='text-base font-medium text-dark-grey hover:opacity-50 mr-8'>Our Work</Link> */}
-              <DropdownMenu text='Our Work' links={[
-                { href: '/work1', text: 'Work 1' },
-                { href: '/work2', text: 'Work 2' },
-                { href: '/work3', text: 'Work 3' },
-              ]} />
+    <header className='w-full'>
+      {/* Top Bar Start */}
+      {/* Top Bar End */}
+      <div className='fixed w-full z-50'>
+        <div style={{ background: 'linear-gradient(to right, #2b3a31, #3F452C, #665921, #8D6E17, #AD7F0F)' }} className='hidden md:flex items-center justify-center h-[42px]  top-0 w-full z-50'>
+          <span className="bg-black leading-7 bg-opacity-50 px-4 inline-block align-middle text-xs text-white rounded-md font-bold mr-4 leading-6 uppercase">Success stories</span>
+          <div className='uppercase text-xs font-medium align-middle text-white '>Fight for right cause for save the world. </div>
+          <Link href='/stories' className='uppercase text-xs font-medium align-middle text-white underline underline-offset-4 hover:opacity-50'>Read Stories</Link>
+        </div>
+        <div className='w-full z-50 px-11 py-4 md:py-[30px]  bg-primary-light border-b-2  '>
+
+          <div className='relative container mx-auto flex justify-between items-center h-full '>
+            <div className='flex items-center'>
+              <Link href='/' className='flex relative items-center'>
+                <img src='/logo.jpg' alt='Logo' className='w-10 h-10' />
+                <h1 className='text-xl font-bold ml-2'>Charity</h1>
+                <div className='w-0.5 h-8 bg-gray-200 absolute right-0 translate-x-5' />
+              </Link>
+              <div className='hidden md:flex items-center ml-10'>
+                <Link href='/' className='text-lg font-medium mr-8 text-dark-grey opacity-50'>Home</Link>
+                <Link href='/contact' className='text-lg font-medium text-dark-grey mr-8 hover:opacity-50'>Contact Us</Link>
+                <Link href='/team' className='text-lg font-medium text-dark-grey hover:opacity-50 mr-8'>Our Team</Link>
+                {/* <Link href='/our-work' className='text-base font-medium text-dark-grey hover:opacity-50 mr-8'>Our Work</Link> */}
+                <DropdownMenu text='Our Work' links={[
+                  { href: '/work1', text: 'Work 1' },
+                  { href: '/work2', text: 'Work 2' },
+                  { href: '/work3', text: 'Work 3' },
+                ]} />
+              </div>
             </div>
-          </div>
-          <div className='flex items-center'>
-            <div className='hidden md:flex items-center mr-8'>
-              <p className='text-base font-medium mr-4'>+1 234 567 890</p>
-              <button className='bg-dark-grey text-white px-4 py-2 rounded-md hover:bg-medium-grey'>Let's Talk</button>
+            <div className='flex items-center'>
+              <div className='hidden md:flex items-center mr-8'>
+                <p className='hidden lg:block text-base font-medium mr-4'>+1 234 567 890</p>
+                <button className='bg-dark-grey text-white px-4 py-2 rounded-md hover:bg-medium-grey'>Let's Talk</button>
+              </div>
+              <div className='md:hidden'>
+                <button onClick={() => setOpen(!open)} className='text-gray-600 hover:text-gray-800'>
+                  <div className={`icon ${open ? 'change' : 'open'}`}>
+                    <div className="bar1"></div>
+                    <div className="bar2"></div>
+                    <div className="bar3"></div>
+                  </div>
+                </button>
+              </div>
             </div>
-            <div className='md:hidden'>
-              <button onClick={() => setOpen(!open)} className='text-gray-600 hover:text-gray-800'>
-                <div className={`icon ${open ? 'change' : 'open'}`}>
-                  <div className="bar1"></div>
-                  <div className="bar2"></div>
-                  <div className="bar3"></div>
-                </div>
-              </button>
-            </div>
+
+           
           </div>
         </div>
 
+
       </div>
-<div className={`md:hidden fixed inset-0 bg-white z-20 transform transition-transform duration-200 ease-in-out translate-x-0 ${open ? 'translate-y-28' : '-translate-y-full'}`}>
-  <div className='p-8'>
-    <Link href='/' className='block text-lg font-medium mb-4 text-dark-grey opacity-50'>Home</Link>
-    <Link href='/contact' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Contact Us</Link>
-    <Link href='/team' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Our Team</Link>
-    <DropdownMenu text='Our Work' links={[
-      { href: '/work1', text: 'Work 1' },
-      { href: '/work2', text: 'Work 2' },
-      { href: '/work3', text: 'Work 3' },
-    ]} />
-  </div>
-</div>
+      <div className={`md:hidden fixed inset-0 bg-white z-20 transform transition-transform duration-200 ease-in-out translate-x-0 ${open ? 'translate-y-[73px]' : '-translate-y-full'}`}>
+              <div className='p-8'>
+                <Link href='/' className='block text-lg font-medium mb-4 text-dark-grey opacity-50'>Home</Link>
+                <Link href='/contact' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Contact Us</Link>
+                <Link href='/team' className='block text-lg font-medium mb-4 text-dark-grey hover:opacity-50'>Our Team</Link>
+                <DropdownMenu text='Our Work' links={[
+                  { href: '/work1', text: 'Work 1' },
+                  { href: '/work2', text: 'Work 2' },
+                  { href: '/work3', text: 'Work 3' },
+                ]} />
+              </div>
+            </div>
 
     </header>
 
