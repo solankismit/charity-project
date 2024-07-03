@@ -30,6 +30,7 @@ module.exports = {
       },
       fontFamily: {
         DM: ['DM Sans', 'sans-serif'],
+        oto:['Otomanopee One Regular']
       },
     },
   },
