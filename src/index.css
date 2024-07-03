@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base{
+    @font-face {
+        font-family: 'Otomanopee One Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Otomanopee One Regular'), url('OtomanopeeOne-Regular.woff') format('woff');
+        }
+}
 body {
     @apply font-DM;
 }
