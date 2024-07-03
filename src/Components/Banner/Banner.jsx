@@ -27,6 +27,8 @@ const Banner = () => {
                 </div>
                 {/* <div className="border-l border-gray-200 h-12 mx-4"></div> */}
             </div>
+            <img src="white-to-cream.jpg" alt="Banner" className="w-full z-20 absolute rotate-180 -bottom-3" />
+
         </div>
     );
 };
