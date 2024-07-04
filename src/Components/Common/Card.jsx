@@ -7,15 +7,17 @@ const Card = ({ Image, Title, Description, Button }) => {
                 <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl"
                     src={Image} alt="Image" />
             </div>
-            <div class="p-4 md:p-5">
-                <h3 class="text-lg font-bold text-gray-800">
+            <div class="text-center divide-y">
+                <div className='p-4 md:p-5 '>
+
+                <h3 class="text-lg font-medium text-dark-grey  tracking-tight">
                     {Title}
                 </h3>
-                <p class="mt-1 text-gray-500">
+                <p class="mt-1 text-medium-grey text-base">
                     {Description}
                 </p>
-                {/* Create Expore More Button with Right Arrow */}
-                <div class="flex items-center justify-between mt-3">
+                </div>
+                <div class="flex items-center justify-between mt-3 p-4 md:p-5 ">
                     <a href="#" class="text-primary font-medium hover:underline">
                         {Button}
                     </a>
