@@ -8,7 +8,7 @@
         font-family: 'Otomanopee One Regular';
         font-style: normal;
         font-weight: normal;
-        src: local('Otomanopee One Regular'), url('OtomanopeeOne-Regular.woff') format('woff');
+        src: local('Otomanopee One Regular'), url('/OtomanopeeOne-Regular.woff') format('woff');
         }
 }
 body {
